@@ -33,9 +33,9 @@ Herdr is a terminal multiplexer for supervising multiple coding agents. It provi
 export CARGO_PROFILE_RELEASE_BUILD_OVERRIDE_OPT_LEVEL=3
 export HERDR_BUILD_CHANNEL=stable
 %if 0%{?el8}
-  $HOME/.cargo/bin/cargo install --release --locked --root=%{buildroot}%{_prefix} --path=.
+  $HOME/.cargo/bin/cargo install --locked --root=%{buildroot}%{_prefix} --path=.
 %else
-  cargo install --release --locked --root=%{buildroot}%{_prefix} --path=.
+  cargo install --locked --root=%{buildroot}%{_prefix} --path=.
 %endif
 
 rm -f %{buildroot}%{_prefix}/.crates.toml \
