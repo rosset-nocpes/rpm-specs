@@ -16,7 +16,7 @@ BuildRequires: rust >= 1.96.1
 %endif
 BuildRequires: gcc
 BuildRequires: cmake
-BuildRequires: zig >= 0.15.2
+BuildRequires: zig >= 0.16
 
 %description
 Herdr is a terminal multiplexer for supervising multiple coding agents. It provides workspaces, tabs, panes, persistent sessions, and agent status tracking in a single terminal interface.
