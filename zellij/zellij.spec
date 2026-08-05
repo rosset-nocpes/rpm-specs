@@ -22,6 +22,7 @@ BuildRequires: perl-devel
 BuildRequires: openssl-perl
 BuildRequires: perl-FindBin
 BuildRequires: perl-IPC-Cmd
+BuildRequires: perl-Time-Piece
 
 %description
 Zellij is a workspace aimed at developers, ops-oriented people and anyone who loves the terminal. At its core, it is a terminal multiplexer (similar to tmux and screen), but this is merely its infrastructure layer. Zellij includes a layout system, and a plugin system allowing one to create plugins in any language that compiles to WebAssembly.
