@@ -5,7 +5,7 @@ Version:    0.8.0
 Release:    1%{?dist}
 Summary:    Terminal multiplexer for supervising coding agents
 
-License:    AGPL-3.0-or-later
+License:    Apache-2.0
 URL:        https://github.com/herdrdev/herdr
 Source0:    %{url}/archive/refs/tags/v%{version}.tar.gz
 
