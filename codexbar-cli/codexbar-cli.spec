@@ -9,6 +9,7 @@ License:    MIT
 URL:        https://github.com/steipete/CodexBar
 Source0:    %{url}/archive/refs/tags/v%{version}.tar.gz
 
+BuildRequires: git-core
 BuildRequires: sqlite-devel
 BuildRequires: swift-lang >= 6.2
 
