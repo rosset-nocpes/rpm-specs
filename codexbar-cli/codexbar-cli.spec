@@ -9,6 +9,7 @@ License:    MIT
 URL:        https://github.com/steipete/CodexBar
 Source0:    %{url}/archive/refs/tags/v%{version}.tar.gz
 
+BuildRequires: clang
 BuildRequires: git-core
 BuildRequires: sqlite-devel
 BuildRequires: swift-lang >= 6.2
@@ -22,7 +23,8 @@ CodexBar CLI shows usage limits and reset times for AI coding providers.
 
 
 %build
-swift build -c release --product CodexBarCLI --static-swift-stdlib
+CC=clang CXX=clang++ \
+    swift build -c release --product CodexBarCLI --static-swift-stdlib
 
 
 %install
