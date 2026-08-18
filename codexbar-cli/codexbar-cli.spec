@@ -12,7 +12,7 @@ Source0:    %{url}/archive/refs/tags/v%{version}.tar.gz
 BuildRequires: clang
 BuildRequires: git-core
 BuildRequires: sqlite-devel
-BuildRequires: swift-lang >= 6.2
+BuildRequires: (swift-lang >= 6.2 with swift-lang < 6.3)
 
 %description
 CodexBar CLI shows usage limits and reset times for AI coding providers.
@@ -20,6 +20,10 @@ CodexBar CLI shows usage limits and reset times for AI coding providers.
 
 %prep
 %autosetup -n CodexBar-%{version} -p1
+sed -i \
+    -e '\|github.com/sparkle-project/Sparkle|d' \
+    -e '\|github.com/sindresorhus/KeyboardShortcuts|d' \
+    -e '\|github.com/zats/Vortex|d' Package.swift
 
 
 %build
