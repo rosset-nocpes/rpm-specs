@@ -23,8 +23,7 @@ CodexBar CLI shows usage limits and reset times for AI coding providers.
 
 
 %build
-CC=clang CXX=clang++ \
-    swift build -c release --product CodexBarCLI --static-swift-stdlib
+CC=clang CXX=clang++ swift build -c release --product CodexBarCLI
 
 
 %install
