@@ -8,7 +8,7 @@
 %endif
 
 Name:       herdr
-Version:    0.8.2
+Version:    0.9.0
 Release:    1%{?dist}
 Summary:    Terminal multiplexer for supervising coding agents
 
