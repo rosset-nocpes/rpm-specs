@@ -1,5 +1,4 @@
 %global debug_package %{nil}
-%global zig_version 0.15.2
 
 %ifarch ppc64le
 %global zig_arch powerpc64le
@@ -23,11 +22,7 @@ BuildRequires: rust >= 1.96.1
 %endif
 BuildRequires: gcc
 BuildRequires: cmake
-%if 0%{?fedora} == 43 || 0%{?fedora} >= 45
-BuildRequires: curl
-%else
-BuildRequires: zig = %{zig_version}
-%endif
+BuildRequires: zig = 0.16.0
 
 %description
 Herdr is a terminal multiplexer for supervising multiple coding agents. It provides workspaces, tabs, panes, persistent sessions, and agent status tracking in a single terminal interface.
@@ -38,20 +33,11 @@ Herdr is a terminal multiplexer for supervising multiple coding agents. It provi
 %if 0%{?el8}
   curl https://sh.rustup.rs -sSf | sh -s -- --profile minimal -y
 %endif
-%if 0%{?fedora} == 43 || 0%{?fedora} >= 45
-curl --fail --location --retry 3 \
-  --output zig-%{zig_version}.tar.xz \
-  https://ziglang.org/download/%{zig_version}/zig-%{zig_arch}-linux-%{zig_version}.tar.xz
-tar -xf zig-%{zig_version}.tar.xz
-%endif
 
 
 %install
 export CARGO_PROFILE_RELEASE_BUILD_OVERRIDE_OPT_LEVEL=3
 export HERDR_BUILD_CHANNEL=stable
-%if 0%{?fedora} == 43 || 0%{?fedora} >= 45
-export PATH="$PWD/zig-%{zig_arch}-linux-%{zig_version}:$PATH"
-%endif
 %if 0%{?el8}
   $HOME/.cargo/bin/cargo install --locked --root=%{buildroot}%{_prefix} --path=.
 %else
